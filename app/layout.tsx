@@ -2,9 +2,9 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'AI Matter - Federal Budget Process',
-  description: 'Understanding the Federal Budget Process: Formulation, Enactment, and Execution',
-  keywords: 'federal budget, budget process, government, appropriations, congress, OMB',
+  title: 'Budget Matter | How Federal Budget Works',
+  description: 'How Federal budget is planned, formulated, executed, and reported.',
+  keywords: 'federal budget, budget process, budget laws, portfolio, projects, tableau, data analysis',
 }
 
 export default function RootLayout({

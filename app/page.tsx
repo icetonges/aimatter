@@ -1,93 +1,134 @@
 'use client'
 
 import Link from 'next/link'
-import { FileText, Users, DollarSign, TrendingUp, BookOpen, Building2, Scale, CircleDollarSign } from 'lucide-react'
+import Image from 'next/image'
 
 export default function Home() {
-  const budgetPhases = [
+  const projects = [
     {
-      icon: <FileText className="w-8 h-8" />,
-      title: 'Formulation',
-      description: 'Federal agencies develop budget requests with OMB guidance',
-      link: '/formulation',
-      color: 'bg-blue-500',
-      delay: '0',
+      title: "Tableau Citi Bike Analysis",
+      description: "Use Tableau to conduct NYC's Citi Bike Share Program Usage analysis.",
+      image: "img/tableau-1-citibike.JPG",
+      link: "/projects/tableau-citibike"
     },
     {
-      icon: <Users className="w-8 h-8" />,
-      title: 'Enactment',
-      description: 'Congress reviews, debates, and passes appropriation bills',
-      link: '/enactment',
-      color: 'bg-green-500',
-      delay: '100',
+      title: "Budget Spend Plan Model",
+      description: "Scenario-driven self-balance tool to plan and monitor Federal budget execution.",
+      image: "project7/Spend Plan Demo.gif",
+      link: "/projects/project7"
     },
     {
-      icon: <DollarSign className="w-8 h-8" />,
-      title: 'Execution',
-      description: 'Agencies spend appropriated funds and manage programs',
-      link: '/execution',
-      color: 'bg-purple-500',
-      delay: '200',
-    },
-  ]
-
-  const keyTopics = [
-    {
-      icon: <Building2 className="w-6 h-6" />,
-      title: 'Federal Agencies',
-      description: 'Learn about the role of executive departments',
-      link: '/agencies',
+      title: "Python - Office Excel 1",
+      description: "Use Python to Combine Excel Workbooks and/or Worksheets",
+      image: "project10/book.gif",
+      link: "/projects/project10"
     },
     {
-      icon: <Scale className="w-6 h-6" />,
-      title: 'Budget Laws',
-      description: 'Key legislation governing the budget process',
-      link: '/laws',
+      title: "Python - Office Excel 2",
+      description: "Use Python to Compare Data and Changes in Excel Workbook.",
+      image: "project11/compare.gif",
+      link: "/projects/project11"
     },
     {
-      icon: <TrendingUp className="w-6 h-6" />,
-      title: 'Budget Types',
-      description: 'Understanding different budget categories',
-      link: '/budget-types',
+      title: "Machine Learning in Python",
+      description: "Use Python Machine Learning to analyze and explore happiness.",
+      image: "project6/project6.PNG",
+      link: "/projects/project6"
     },
     {
-      icon: <CircleDollarSign className="w-6 h-6" />,
-      title: 'Appropriations',
-      description: 'How Congress allocates federal spending',
-      link: '/appropriations',
+      title: "Excel VBA Examples",
+      description: "Use VBA functionalities to conduct data comparison, mining, analysis.",
+      image: "project9/vba.jpg",
+      link: "/projects/project9"
     },
+    {
+      title: "Federal Spending Dashboard",
+      description: "Tableau based dashboard to track federal budget and spending.",
+      image: "project13/project13.PNG",
+      link: "/projects/project13"
+    },
+    {
+      title: "Budget Execution",
+      description: "Tableau based dashboard to track and compare budget execution.",
+      image: "project14/project14.PNG",
+      link: "/projects/project14"
+    },
+    {
+      title: "SQL Data, Python",
+      description: "SQL Data, Python Data Analysis & Visualization",
+      image: "project15/sqlalchemy.png",
+      link: "/projects/project15"
+    },
+    {
+      title: "Python, JS D3, and Leaflet",
+      description: "Conduct data mining, create map, add interactivity to the webpage.",
+      image: "project8/project8.PNG",
+      link: "/projects/project8"
+    },
+    {
+      title: "COVID-19 Dashboard",
+      description: "Use Tableau to visualize the COVID-19 spread over last four months.",
+      image: "img/tableau-3-covid19.JPG",
+      link: "/projects/tableau-covid19"
+    },
+    {
+      title: "About Federal Employment",
+      description: "Based on released FY 2018 data that is available to public.",
+      image: "img/tableau-2-fed-avg-salary.JPG",
+      link: "/projects/tableau-federal-employment"
+    },
+    {
+      title: "The Power of Plots",
+      description: "Apply Python Matplotlib to a real-world situation",
+      image: "img/project5.PNG",
+      link: "/projects/project5"
+    },
+    {
+      title: "Biodiversity Dashboard",
+      description: "Use JavaScript, CSS, D3, Plotly to build interactive dashboard",
+      image: "img/project4.PNG",
+      link: "/projects/project4"
+    },
+    {
+      title: "Use Python to Analyze Text",
+      description: "Perform Sentiment Analysis on Text.",
+      image: "project12/text.gif",
+      link: "/projects/project12"
+    }
   ]
 
   return (
     <div className="min-h-screen">
       {/* Navigation */}
-      <nav className="bg-white shadow-sm sticky top-0 z-50">
+      <nav className="bg-dark-800 text-white shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <div className="flex items-center">
-              <BookOpen className="w-8 h-8 text-primary-600" />
-              <span className="ml-2 text-xl font-bold text-gray-900">AI Matter</span>
-            </div>
+            <Link href="/" className="flex items-center">
+              <div className="text-xl font-bold">
+                <span className="text-blue-400">Budget Matter</span>
+                <div className="text-sm font-normal text-gray-300">How Federal Budget Works</div>
+              </div>
+            </Link>
+            
             <div className="hidden md:flex space-x-8">
-              <Link href="/" className="text-gray-700 hover:text-primary-600 transition-colors">
-                Home
+              <div className="relative group">
+                <button className="nav-link text-white hover:text-blue-400">
+                  Budget Process
+                </button>
+                <div className="absolute hidden group-hover:block bg-white text-gray-900 shadow-lg rounded-md mt-2 py-2 w-48 z-50">
+                  <Link href="/process" className="block px-4 py-2 hover:bg-gray-100">Overview</Link>
+                  <Link href="/formulation" className="block px-4 py-2 hover:bg-gray-100">Budget Formulation</Link>
+                  <Link href="/enactment" className="block px-4 py-2 hover:bg-gray-100">Budget Enactment</Link>
+                  <Link href="/execution" className="block px-4 py-2 hover:bg-gray-100">Budget Execution</Link>
+                </div>
+              </div>
+              <Link href="/policy" className="nav-link text-white hover:text-blue-400">
+                Budget Laws
               </Link>
-              <Link href="/formulation" className="text-gray-700 hover:text-primary-600 transition-colors">
-                Formulation
+              <Link href="/portfolio" className="nav-link text-white hover:text-blue-400">
+                Portfolio
               </Link>
-              <Link href="/enactment" className="text-gray-700 hover:text-primary-600 transition-colors">
-                Enactment
-              </Link>
-              <Link href="/execution" className="text-gray-700 hover:text-primary-600 transition-colors">
-                Execution
-              </Link>
-              <Link href="/projects" className="text-gray-700 hover:text-primary-600 transition-colors">
-                Projects
-              </Link>
-              <Link href="/contact" className="text-gray-700 hover:text-primary-600 transition-colors">
-                Contact
-              </Link>
-              <Link href="/about" className="text-gray-700 hover:text-primary-600 transition-colors">
+              <Link href="/about" className="nav-link text-white hover:text-blue-400">
                 About
               </Link>
             </div>
@@ -95,226 +136,107 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary-600 via-primary-700 to-primary-900 text-white">
-        <div className="absolute inset-0 bg-black opacity-10"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
-          <div className="text-center">
-            <h1 className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
-              Understanding the
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-cyan-200">
-                Federal Budget Process
-              </span>
-            </h1>
-            <p className="text-xl md:text-2xl text-blue-100 mb-8 max-w-3xl mx-auto">
-              A comprehensive guide to how the U.S. government plans, approves, and manages the federal budget
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/formulation" className="btn-primary bg-white text-primary-700 hover:bg-blue-50">
-                Explore the Process
-              </Link>
-              <Link href="/about" className="btn-secondary bg-transparent border-white text-white hover:bg-white hover:text-primary-700">
-                Learn More
-              </Link>
+      {/* Hero Carousel Section */}
+      <div className="hero-section" style={{backgroundImage: 'url(/aimatter/images/Congress.jpg)'}}>
+        <div className="hero-overlay"></div>
+        <div className="hero-content">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 className="text-5xl font-bold mb-4">Budget Laws</h1>
+            <p className="text-xl">Information pertaining to budget and finance policy</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Welcome Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl font-bold text-center mb-12">Welcome to Budget Matter</h2>
+          
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            <div className="card">
+              <div className="p-6">
+                <h3 className="text-2xl font-bold mb-4">Budget Process</h3>
+                <p className="text-gray-700 mb-6">
+                  How Federal budget is planned, formulated, executed, and reported.
+                </p>
+                <Link href="/process" className="btn-primary">
+                  Learn More
+                </Link>
+              </div>
             </div>
-          </div>
-        </div>
-        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-gray-50 to-transparent"></div>
-      </section>
 
-      {/* Three Phases Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="section-title">The Three Phases of the Budget Process</h2>
-            <p className="section-subtitle">
-              Understanding how federal budgets move from planning to execution
-            </p>
-          </div>
+            <div className="card">
+              <div className="p-6">
+                <h3 className="text-2xl font-bold mb-4">Budget Laws</h3>
+                <p className="text-gray-700 mb-6">
+                  Legislative and regulatory requirements set forth for financial management function.
+                </p>
+                <Link href="/policy" className="btn-primary">
+                  Learn More
+                </Link>
+              </div>
+            </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {budgetPhases.map((phase, index) => (
-              <Link
-                key={index}
-                href={phase.link}
-                className="group"
-                style={{ animationDelay: `${phase.delay}ms` }}
-              >
-                <div className="card hover:scale-105 transform transition-all duration-300 h-full">
-                  <div className={`${phase.color} w-16 h-16 rounded-lg flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform`}>
-                    {phase.icon}
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                    {phase.title}
-                  </h3>
-                  <p className="text-gray-600 mb-4">
-                    {phase.description}
-                  </p>
-                  <div className="text-primary-600 font-semibold flex items-center group-hover:translate-x-2 transition-transform">
-                    Learn More →
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Process Timeline */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="section-title">Budget Cycle Timeline</h2>
-            <p className="section-subtitle">
-              The federal budget process typically spans 18-24 months
-            </p>
-          </div>
-
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-primary-200 hidden md:block"></div>
-
-            {/* Timeline items */}
-            <div className="space-y-12">
-              <TimelineItem
-                position="left"
-                title="Spring (Year 1)"
-                subtitle="Planning Begins"
-                description="Federal agencies begin developing budget requests based on OMB guidance"
-              />
-              <TimelineItem
-                position="right"
-                title="Fall (Year 1)"
-                subtitle="Budget Submission"
-                description="Agencies submit budget proposals to OMB for review and approval"
-              />
-              <TimelineItem
-                position="left"
-                title="February (Year 2)"
-                subtitle="Presidential Budget"
-                description="President submits budget request to Congress for consideration"
-              />
-              <TimelineItem
-                position="right"
-                title="Spring-Summer (Year 2)"
-                subtitle="Congressional Action"
-                description="Congress reviews, debates, and passes appropriation bills"
-              />
-              <TimelineItem
-                position="left"
-                title="October 1 (Year 2)"
-                subtitle="Fiscal Year Begins"
-                description="New fiscal year starts; agencies begin executing approved budgets"
-              />
+            <div className="card">
+              <div className="p-6">
+                <h3 className="text-2xl font-bold mb-4">Portfolio</h3>
+                <p className="text-gray-700 mb-6">
+                  Real-world applications
+                </p>
+                <Link href="/portfolio" className="btn-primary">
+                  Learn More
+                </Link>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Key Topics Grid */}
-      <section className="py-20 bg-gray-50">
+      {/* Personal Projects Section */}
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="section-title">Explore Key Topics</h2>
-            <p className="section-subtitle">
-              Deep dive into specific aspects of the federal budget process
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {keyTopics.map((topic, index) => (
-              <Link key={index} href={topic.link} className="group">
-                <div className="card hover:scale-105 transform transition-all h-full">
-                  <div className="bg-primary-100 w-12 h-12 rounded-lg flex items-center justify-center text-primary-600 mb-4 group-hover:bg-primary-600 group-hover:text-white transition-colors">
-                    {topic.icon}
+          <h2 className="text-4xl font-bold text-center mb-12">Personal Projects</h2>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((project, index) => (
+              <Link key={index} href={project.link} className="card group">
+                <div className="aspect-video bg-gray-200 relative overflow-hidden">
+                  <div className="absolute inset-0 flex items-center justify-center text-gray-400">
+                    <span className="text-sm">Image: {project.image}</span>
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">
-                    {topic.title}
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold mb-3 group-hover:text-blue-600 transition-colors">
+                    {project.title}
                   </h3>
-                  <p className="text-sm text-gray-600">
-                    {topic.description}
+                  <p className="text-gray-600">
+                    {project.description}
                   </p>
                 </div>
               </Link>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-primary-600 to-primary-800 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold mb-6">
-            Ready to Learn More?
-          </h2>
-          <p className="text-xl text-blue-100 mb-8">
-            Explore detailed information about each phase of the federal budget process
-          </p>
-          <Link href="/formulation" className="btn-primary bg-white text-primary-700 hover:bg-blue-50">
-            Start with Formulation
-          </Link>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-gray-300 py-12">
+      <footer className="bg-gray-900 text-white py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-8">
-            <div>
-              <div className="flex items-center mb-4">
-                <BookOpen className="w-6 h-6 text-primary-400" />
-                <span className="ml-2 text-lg font-bold text-white">AI Matter</span>
-              </div>
-              <p className="text-sm">
-                Your comprehensive guide to understanding the federal budget process
-              </p>
-            </div>
-            <div>
-              <h3 className="text-white font-semibold mb-4">Quick Links</h3>
-              <ul className="space-y-2 text-sm">
-                <li><Link href="/formulation" className="hover:text-primary-400 transition-colors">Formulation</Link></li>
-                <li><Link href="/enactment" className="hover:text-primary-400 transition-colors">Enactment</Link></li>
-                <li><Link href="/execution" className="hover:text-primary-400 transition-colors">Execution</Link></li>
-                <li><Link href="/about" className="hover:text-primary-400 transition-colors">About</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-white font-semibold mb-4">Resources</h3>
-              <ul className="space-y-2 text-sm">
-                <li><a href="https://www.whitehouse.gov/omb/" target="_blank" rel="noopener noreferrer" className="hover:text-primary-400 transition-colors">OMB Website</a></li>
-                <li><a href="https://www.gao.gov/" target="_blank" rel="noopener noreferrer" className="hover:text-primary-400 transition-colors">GAO Resources</a></li>
-                <li><a href="https://www.congress.gov/" target="_blank" rel="noopener noreferrer" className="hover:text-primary-400 transition-colors">Congress.gov</a></li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm">
-            <p>&copy; 2026 AI Matter. Built with Next.js 15 and React 19.</p>
+          <div className="flex items-center justify-center space-x-4">
+            <span>Budget Matter 2022</span>
+            <a 
+              href="https://github.com/budgetmatter/budgetmatter.github.io" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-blue-400 transition-colors"
+            >
+              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
+              </svg>
+            </a>
           </div>
         </div>
       </footer>
-    </div>
-  )
-}
-
-function TimelineItem({ position, title, subtitle, description }: {
-  position: 'left' | 'right'
-  title: string
-  subtitle: string
-  description: string
-}) {
-  return (
-    <div className={`flex items-center ${position === 'left' ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
-      <div className={`w-full md:w-5/12 ${position === 'left' ? 'md:text-right md:pr-8' : 'md:text-left md:pl-8'}`}>
-        <div className="card">
-          <h3 className="text-xl font-bold text-gray-900 mb-1">{title}</h3>
-          <h4 className="text-primary-600 font-semibold mb-2">{subtitle}</h4>
-          <p className="text-gray-600 text-sm">{description}</p>
-        </div>
-      </div>
-      <div className="hidden md:block w-2/12 flex justify-center">
-        <div className="w-4 h-4 bg-primary-600 rounded-full border-4 border-white shadow-lg"></div>
-      </div>
-      <div className="hidden md:block w-5/12"></div>
     </div>
   )
 }

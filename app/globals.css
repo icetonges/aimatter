@@ -4,28 +4,41 @@
 
 @layer base {
   body {
-    @apply bg-gray-50 text-gray-900;
+    @apply bg-white text-gray-900;
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg;
+    @apply bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded transition-colors;
   }
   
   .btn-secondary {
-    @apply bg-white hover:bg-gray-50 text-gray-900 font-semibold py-3 px-6 rounded-lg border-2 border-gray-200 transition-all duration-200;
+    @apply bg-gray-600 hover:bg-gray-700 text-white font-medium py-2 px-6 rounded transition-colors;
   }
   
   .card {
-    @apply bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-6 border border-gray-100;
+    @apply bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden;
   }
   
-  .section-title {
-    @apply text-4xl font-bold text-gray-900 mb-4;
+  .nav-link {
+    @apply text-gray-700 hover:text-blue-600 font-medium transition-colors;
   }
   
-  .section-subtitle {
-    @apply text-xl text-gray-600 mb-8;
+  .nav-link-active {
+    @apply text-blue-600 font-semibold;
+  }
+  
+  .hero-section {
+    @apply relative bg-cover bg-center bg-no-repeat;
+    min-height: 400px;
+  }
+  
+  .hero-overlay {
+    @apply absolute inset-0 bg-black bg-opacity-40;
+  }
+  
+  .hero-content {
+    @apply relative z-10 text-white text-center py-20;
   }
 }

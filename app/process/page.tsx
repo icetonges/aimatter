@@ -3,17 +3,17 @@
 import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
 
-export default function Execution() {
+export default function Process() {
   return (
     <div className="min-h-screen flex flex-col">
       <Navigation />
 
-      <div className="hero-section" style={{backgroundImage: 'url(/aimatter/images/execution.jpg)'}}>
+      <div className="hero-section" style={{backgroundImage: 'url(/aimatter/images/process.jpg)'}}>
         <div className="hero-overlay"></div>
         <div className="hero-content">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 className="text-5xl font-bold mb-4">Budget Execution</h1>
-            <p className="text-xl">Implementation and spending management</p>
+            <h1 className="text-5xl font-bold mb-4">Budget Process Overview</h1>
+            <p className="text-xl">Complete federal budget cycle</p>
           </div>
         </div>
       </div>
@@ -23,7 +23,7 @@ export default function Execution() {
           <div className="prose prose-lg max-w-none">
             <h2 className="text-3xl font-bold mb-6">Overview</h2>
             <p className="text-gray-700 leading-relaxed mb-6">
-              This page contains information about budget execution in the federal budget process.
+              This page contains information about budget process overview in the federal budget process.
             </p>
             
             <div className="grid md:grid-cols-2 gap-8 mt-12">
@@ -75,7 +75,7 @@ export default function Execution() {
             <div className="mt-12">
               <div className="bg-gray-100 rounded-lg p-8 text-center">
                 <p className="text-gray-600">
-                  Diagram: execution-process.png
+                  Diagram: process-process.png
                   <br />
                   <span className="text-sm">(Add your image to public/images/)</span>
                 </p>
