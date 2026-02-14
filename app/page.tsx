@@ -81,6 +81,12 @@ export default function Home() {
               <Link href="/execution" className="text-gray-700 hover:text-primary-600 transition-colors">
                 Execution
               </Link>
+              <Link href="/projects" className="text-gray-700 hover:text-primary-600 transition-colors">
+                Projects
+              </Link>
+              <Link href="/contact" className="text-gray-700 hover:text-primary-600 transition-colors">
+                Contact
+              </Link>
               <Link href="/about" className="text-gray-700 hover:text-primary-600 transition-colors">
                 About
               </Link>
