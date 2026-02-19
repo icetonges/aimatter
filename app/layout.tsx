@@ -1,5 +1,6 @@
-import type { Metadata } from 'next'
-import './globals.css'
+import type { Metadata } from 'next';
+import './globals.css';
+import { Analytics } from '@vercel/analytics/react'; // Added import
 
 export const metadata: Metadata = {
   title: 'Budget Matter | How Federal Budget Works',
@@ -14,7 +15,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        {children}
+        <Analytics /> {/* Added component */}
+      </body>
     </html>
   )
 }
