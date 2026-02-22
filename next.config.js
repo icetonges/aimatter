@@ -1,12 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // This tells Next.js: if we are on GitHub Pages, use '/aimatter', 
-  // but if we are on Vercel (or local), use no prefix.
-  basePath: process.env.NODE_ENV === 'production' && !process.env.VERCEL ? '/aimatter' : '',
-  output: 'export', // Required for GitHub Pages
+  // Removed basePath '/aimatter' - this was causing all asset paths to break on Vercel
+  // Only needed for GitHub Pages deployment; Vercel serves from root '/'
   images: {
-    unoptimized: true, // Required for static exports
+    unoptimized: false, // Enable Vercel's built-in image optimization
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
