@@ -1,44 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-  body {
-    @apply bg-white text-gray-900;
+  html {
+    font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  }
+
+  /* Ensure images don't overflow their containers */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
   }
 }
 
-@layer components {
-  .btn-primary {
-    @apply bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded transition-colors;
-  }
-  
-  .btn-secondary {
-    @apply bg-gray-600 hover:bg-gray-700 text-white font-medium py-2 px-6 rounded transition-colors;
-  }
-  
-  .card {
-    @apply bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden;
-  }
-  
-  .nav-link {
-    @apply text-gray-700 hover:text-blue-600 font-medium transition-colors;
-  }
-  
-  .nav-link-active {
-    @apply text-blue-600 font-semibold;
-  }
-  
-  .hero-section {
-    @apply relative bg-cover bg-center bg-no-repeat;
-    min-height: 400px;
-  }
-  
-  .hero-overlay {
-    @apply absolute inset-0 bg-black bg-opacity-40;
-  }
-  
-  .hero-content {
-    @apply relative z-10 text-white text-center py-20;
+@layer utilities {
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 }
